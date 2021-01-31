@@ -1,0 +1,17 @@
+{
+  "name": "react-admin",
+  "main": "index.js",
+  "workspaces": [
+    "client"
+  ],
+  "scripts": {
+    "server": "json-server --watch db.json --port 5000 --middlewares ./range.js",
+    "client": "yarn workspace client start",
+    "dev": "concurrently \"yarn server\" \"yarn client\""
+  },
+  "dependencies": {
+    "concurrently": "^5.3.0",
+    "content-range": "^1.1.1",
+    "json-server": "^0.16.3"
+  }
+}
